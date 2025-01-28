@@ -1,73 +1,180 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Elio & Marti - Il nostro giorno speciale. 25 maggio 2025 a Roma">
-    <meta name="keywords" content="matrimonio, Elio, Marti, Roma, nozze">
-    <title>Elio & Marti - Il Nostro Giorno Speciale</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="description" content="Elio & Marti - Il nostro giorno speciale. Informazioni sul matrimonio, viaggio di nozze e galleria fotografica." />
+  <meta name="keywords" content="Matrimonio, Elio, Marti, Viaggio di nozze, IBAN, Cerimonia" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elio &amp; Marti - Il Nostro Giorno Speciale</title>
+  
+  <!-- Collegamento Google Fonts (Playfair Display per i titoli, Roboto per il testo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Collegamento al file CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="hero">
-        <img src="images/1.jpg" alt="Elio e Marti" class="hero-image">
-        <div class="hero-content">
-            <h1>Elio & Marti</h1>
-            <h2>Il Nostro Giorno Speciale</h2>
-            <p class="date">Sabato 25 maggio 2025, ore 15:30</p>
-            <p class="location">Chiesa di Santa Maria, Roma</p>
-        </div>
-    </header>
 
-    <section class="section info-section fade-in">
-        <div class="text-content">
-            <h2>Il Nostro Matrimonio</h2>
-            <p>Un giorno che sognavamo da anni, finalmente sta per arrivare. Condividete con noi questa gioia!</p>
-            <div class="image-grid">
-                <img src="images/2.jpg" alt="Momento speciale">
-                <img src="images/3.jpg" alt="Preparativi">
-                <img src="images/4.jpg" alt="Dettagli">
-            </div>
-            <h3>Luogo della Cerimonia</h3>
-            <p>Chiesa di Santa Maria<br>
-            Via del Matrimonio Felice, 123 - Roma</p>
-            <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.097274766089!2d12.492231315433967!3d41.89021017922197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b6532013ad%3A0x28e1c56206b7e181!2sBasilica%20di%20Santa%20Maria%20Maggiore!5e0!3m2!1sit!2sit!4v1623160000000!5m2!1sit!2sit" 
-                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
+  <!-- NAVBAR con effetto "shrink" su scroll -->
+  <nav class="main-nav" id="mainNav">
+    <!-- Logo (opzionale) -->
+    <div class="logo">
+      <!-- Sostituisci con la tua immagine di logo (se la desideri) -->
+      <img src="images/logo.png" alt="Elio & Marti Logo" />
+    </div>
+    <!-- Link di navigazione: icone al posto del testo -->
+    <ul class="nav-links">
+      <li>
+        <a href="#benvenuto" title="Benvenuto">
+          <img src="images/icon-benvenuto.png" alt="Benvenuto" />
+        </a>
+      </li>
+      <li>
+        <a href="#info-generali" title="Informazioni">
+          <img src="images/icon-info.png" alt="Informazioni" />
+        </a>
+      </li>
+      <li>
+        <a href="#viaggio-nozze" title="Viaggio di Nozze">
+          <img src="images/icon-viaggio.png" alt="Viaggio di Nozze" />
+        </a>
+      </li>
+      <li>
+        <a href="#regalo" title="Regalo">
+          <img src="images/icon-regalo.png" alt="Regalo" />
+        </a>
+      </li>
+      <li>
+        <a href="#galleria" title="Galleria">
+          <img src="images/icon-galleria.png" alt="Galleria" />
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-    <section class="section trip-section fade-in">
-        <h2>La Nostra Luna di Miele</h2>
-        <p>Per il nostro viaggio di nozze abbiamo scelto il Giappone, tra templi antichi e ciliegi in fiore.</p>
-        <div class="image-grid">
-            <img src="images/5.jpg" alt="Viaggio 1">
-            <img src="images/6.jpg" alt="Viaggio 2">
-        </div>
-    </section>
+  <!-- Sezione di Benvenuto -->
+  <section id="benvenuto" class="section section-benvenuto">
+    <div class="content fade-in">
+      <h1 class="title">Elio &amp; Marti</h1>
+      <h2 class="subtitle">Il Nostro Giorno Speciale</h2>
+      <p class="date">Sabato 25 maggio 2025, ore 15:30</p>
+      <p class="location">Chiesa di Santa Maria, Roma</p>
+      <!-- Foto di apertura (usa una delle foto da 1 a 10) -->
+      <div class="hero-image">
+        <img src="images/1.jpg" alt="Foto di apertura" />
+      </div>
+    </div>
+  </section>
 
-    <section class="section gift-section fade-in">
-        <div class="iban-box">
-            <i class="fas fa-heart"></i>
-            <h2>Il Regalo dei Nostri Sogni</h2>
-            <p>Se volete contribuire al nostro viaggio di nozze:</p>
-            <div class="iban">IT00X00000000000000000000</div>
-        </div>
-    </section>
+  <!-- Sezione Informazioni Generali -->
+  <section id="info-generali" class="section section-info">
+    <div class="content fade-in">
+      <h2>Informazioni Generali</h2>
+      <p>
+        Siamo felicissimi di invitarvi al nostro matrimonio.  
+        Di seguito troverete tutte le informazioni utili per raggiungere la cerimonia e festeggiare con noi.
+      </p>
 
-    <section class="section gallery-section fade-in">
-        <h2>I Nostri Momenti</h2>
-        <div class="gallery-grid">
-            <img src="images/7.jpg" alt="Galleria 1">
-            <img src="images/8.jpg" alt="Galleria 2">
-            <img src="images/9.jpg" alt="Galleria 3">
-            <img src="images/10.jpg" alt="Galleria 4">
-        </div>
-    </section>
+      <!-- Fino a 3 foto scelte tra quelle disponibili -->
+      <div class="info-images">
+        <img src="images/2.jpg" alt="Foto informativa 1">
+        <img src="images/3.jpg" alt="Foto informativa 2">
+        <img src="images/4.jpg" alt="Foto informativa 3">
+      </div>
 
-    <script src="script.js"></script>
+      <!-- Informazioni logistiche -->
+      <div class="logistica">
+        <h3>Indirizzo della cerimonia</h3>
+        <p>Chiesa di Santa Maria, Via delle Rose 123, Roma</p>
+        
+        <h3>Indicazioni Stradali / Mappa</h3>
+        <div class="map-container">
+          <!-- Esempio di integrazione Google Maps tramite iframe -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.1234567890!2d12.1234567!3d41.9876543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61bfffffff!2sChiesa%20di%20Santa%20Maria!5e0!3m2!1sit!2sit!4v00000000000000"
+            width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Descrizione del Viaggio di Nozze -->
+  <section id="viaggio-nozze" class="section section-viaggio">
+    <div class="content fade-in">
+      <h2>Il Nostro Viaggio di Nozze</h2>
+      <p>
+        Per la nostra luna di miele abbiamo scelto il Giappone, tra templi e ciliegi in fiore.  
+        Non vediamo l'ora di condividere con voi ogni dettaglio di questa fantastica avventura!
+      </p>
+      <!-- 2-3 foto pertinenti -->
+      <div class="viaggio-images">
+        <img src="images/5.jpg" alt="Foto Viaggio 1">
+        <img src="images/6.jpg" alt="Foto Viaggio 2">
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Regalo - IBAN -->
+  <section id="regalo" class="section section-regalo">
+    <div class="content fade-in">
+      <h2>Regalo di Nozze</h2>
+      <p>Se volete contribuire al nostro viaggio di nozze, potete farlo tramite bonifico:</p>
+      <p class="iban"><strong>IBAN:</strong> IT00X00000000000000000000</p>
+      <p>Grazie di cuore a tutti!</p>
+      <!-- Icona cuore o simbolo matrimonio (esempio con HTML entity) -->
+      <p class="icon-heart">&#9829;</p>
+    </div>
+  </section>
+
+  <!-- Sezione Galleria Fotografica -->
+  <section id="galleria" class="section section-galleria">
+    <div class="content fade-in">
+      <h2>Galleria Fotografica</h2>
+      <div class="gallery-grid">
+        <img src="images/7.jpg" alt="Foto Galleria 1">
+        <img src="images/8.jpg" alt="Foto Galleria 2">
+        <img src="images/9.jpg" alt="Foto Galleria 3">
+        <img src="images/10.jpg" alt="Foto Galleria 4">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (opzionale) -->
+  <footer class="main-footer">
+    <p>&copy; 2025 Elio &amp; Marti - Tutti i diritti riservati</p>
+  </footer>
+
+  <!-- Script: effettua fade-in delle sezioni e "shrink" della navbar su scroll -->
+  <script>
+    // Effetto fade-in con Intersection Observer
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Effetto "shrink" per la navbar
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('mainNav');
+      // Quando scrollY > 50, aggiunge la classe .shrink
+      if (window.scrollY > 50) {
+        nav.classList.add('shrink');
+      } else {
+        nav.classList.remove('shrink');
+      }
+    });
+  </script>
+
 </body>
 </html>
