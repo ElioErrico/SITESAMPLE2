@@ -1,137 +1,283 @@
-:root {
-    --primary-color: #f8e9e1;
-    --secondary-color: #d4a798;
-    --text-color: #4a4a4a;
-}
-
+/* Reset di base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Impostazioni font generali */
 body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background-color: #fdfdfd;
+  line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 1rem;
+/* NAVBAR con icone e "shrink" */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: all 0.3s ease;
 }
 
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+/* Logo (opzionale) */
+.logo img {
+  height: 50px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+/* Link di navigazione (icone) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  display: block;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* Riduci dimensioni quando lo scroll supera i 50px */
+.main-nav.shrink {
+  padding: 0.2rem 1rem;
+}
+
+.main-nav.shrink .logo img {
+  height: 30px; /* Logo più piccolo */
+}
+
+.main-nav.shrink .nav-links a img {
+  max-height: 24px; /* Riduce leggermente le icone se vuoi */
+}
+
+/* Sezioni generiche */
+.section {
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Visto che la nav è fixed, aggiungiamo un padding-top extra alla prima sezione 
+   per evitare che venga coperta dalla navbar */
+.section-benvenuto {
+  margin-top: 3.5rem; /* altezza nav */
+  background: #faf5f5;
+}
+
+.content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Titoli e stile della sezione di Benvenuto */
+.section-benvenuto .title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-benvenuto .subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.section-benvenuto .date,
+.section-benvenuto .location {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .hero-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.7);
+  margin-top: 2rem;
 }
 
-.hero-content {
-    position: relative;
-    text-align: center;
-    color: white;
-    z-index: 1;
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 0.5rem;
+/* Sezione Informazioni Generali */
+.section-info {
+  background-color: #ffffff;
 }
 
-.section {
-    padding: 4rem 2rem;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.section-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.image-grid {
-    display: grid;
-    grid-gap: 1rem;
-    margin: 2rem 0;
+.section-info p {
+  margin-bottom: 1rem;
 }
 
-.info-section .image-grid {
-    grid-template-columns: repeat(3, 1fr);
+.info-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.info-images img {
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.logistica {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.map-container {
+  margin-top: 1rem;
+}
+
+/* Sezione Viaggio di Nozze */
+.section-viaggio {
+  background-color: #fafafa;
+}
+
+.section-viaggio h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.viaggio-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.viaggio-images img {
+  width: 220px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Sezione Regalo - IBAN */
+.section-regalo {
+  background-color: #fff;
+}
+
+.section-regalo h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section-regalo .iban {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.section-regalo .icon-heart {
+  font-size: 2rem;
+  color: red;
+}
+
+/* Sezione Galleria */
+.section-galleria {
+  background-color: #faf5f5;
+}
+
+.section-galleria h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
-.iban-box {
-    text-align: center;
-    padding: 2rem;
-    background-color: var(--primary-color);
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
+/* Footer */
+.main-footer {
+  background-color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
 }
 
-.iban {
-    font-family: monospace;
-    font-size: 1.2rem;
-    padding: 1rem;
-    background-color: white;
-    margin: 1rem 0;
-    border-radius: 5px;
-}
-
-.fa-heart {
-    color: var(--secondary-color);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.map {
-    margin: 2rem 0;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .info-section .image-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section {
-        padding: 2rem 1rem;
-    }
-}
-
+/* Fade-in animation */
 .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .info-images,
+  .viaggio-images,
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .info-images img,
+  .viaggio-images img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .main-nav.shrink {
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .main-nav.shrink .logo img {
+    height: 25px;
+  }
 }
