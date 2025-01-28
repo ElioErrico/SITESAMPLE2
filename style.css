@@ -1,0 +1,235 @@
+/* Reset di base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Impostazioni font generali */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background-color: #fdfdfd;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+/* Classe per dimensionare manualmente eventuali icone */
+.size-6 {
+  width: 24px;  
+  height: 24px;
+}
+
+/* Navbar */
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffffcc;
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+}
+
+.main-nav li {
+  margin: 0 1rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: inline-flex; /* per centrare meglio l'icona */
+  align-items: center;
+}
+
+/* Forza la dimensione degli SVG nel nav */
+.main-nav a svg {
+  width: 24px;
+  height: 24px;
+}
+
+.main-nav a:hover {
+  color: #888;
+}
+
+/* Sezioni generiche */
+.section {
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Struttura contenuto centrale */
+.content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Benvenuto */
+.section-benvenuto {
+  background: #faf5f5;
+  padding-top: 6rem; 
+}
+
+.section-benvenuto .title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-benvenuto .subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.section-benvenuto .date,
+.section-benvenuto .location {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.hero-image {
+  margin-top: 2rem;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Sezione Informazioni Generali */
+.section-info {
+  background-color: #ffffff;
+}
+
+.section-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section-info p {
+  margin-bottom: 1rem;
+}
+
+/* Sezione Viaggio di Nozze */
+.section-viaggio {
+  background-color: #fafafa;
+}
+
+.section-viaggio h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Sezione Regalo - IBAN */
+.section-regalo {
+  background-color: #fff;
+}
+
+.section-regalo h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section-regalo p {
+  margin-bottom: 1rem;
+}
+
+.section-regalo .iban {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.section-regalo .icon-heart {
+  font-size: 2rem;
+  color: red;
+}
+
+/* Sezione Galleria Fotografica */
+.section-galleria {
+  background-color: #faf5f5;
+}
+
+.section-galleria h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Impilamento verticale e larghezza massima per le immagini 
+   (eccetto l'immagine hero) */
+.info-images,
+.viaggio-images,
+.gallery-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.info-images img,
+.viaggio-images img,
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Footer */
+.main-footer {
+  background-color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Effetti di animazione (fade-in) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Se vuoi che la navbar resti sempre in fila, 
+     lascia commentato il vecchio codice:
+  
+  .main-nav ul {
+    flex-direction: column;
+    padding: 1rem;
+  } */
+
+  /* Le immagini sono già impilate di default, 
+     qui puoi ridurre ulteriormente la larghezza se desideri */
+  .info-images img,
+  .viaggio-images img,
+  .gallery-grid img {
+    max-width: 300px;
+  }
+}
