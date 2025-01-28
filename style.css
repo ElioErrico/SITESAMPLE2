@@ -1,235 +1,137 @@
-/* Reset di base */
+:root {
+    --primary-color: #f8e9e1;
+    --secondary-color: #d4a798;
+    --text-color: #4a4a4a;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Impostazioni font generali */
 body {
-  font-family: 'Roboto', sans-serif;
-  color: #333;
-  background-color: #fdfdfd;
-  line-height: 1.5;
-  scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
-/* Classe per dimensionare manualmente eventuali icone */
-.size-6 {
-  width: 24px;  
-  height: 24px;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
 }
 
-/* Navbar */
-.main-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #ffffffcc;
-  backdrop-filter: blur(5px);
-  z-index: 999;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem 1rem;
-}
-
-.main-nav li {
-  margin: 0 1rem;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  display: inline-flex; /* per centrare meglio l'icona */
-  align-items: center;
-}
-
-/* Forza la dimensione degli SVG nel nav */
-.main-nav a svg {
-  width: 24px;
-  height: 24px;
-}
-
-.main-nav a:hover {
-  color: #888;
-}
-
-/* Sezioni generiche */
-.section {
-  padding: 5rem 2rem;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-/* Struttura contenuto centrale */
-.content {
-  max-width: 800px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Benvenuto */
-.section-benvenuto {
-  background: #faf5f5;
-  padding-top: 6rem; 
-}
-
-.section-benvenuto .title {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.section-benvenuto .subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #666;
-}
-
-.section-benvenuto .date,
-.section-benvenuto .location {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .hero-image {
-  margin-top: 2rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
 }
 
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 1;
 }
 
-/* Sezione Informazioni Generali */
-.section-info {
-  background-color: #ffffff;
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
 }
 
-.section-info h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.section-info p {
-  margin-bottom: 1rem;
-}
-
-/* Sezione Viaggio di Nozze */
-.section-viaggio {
-  background-color: #fafafa;
-}
-
-.section-viaggio h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* Sezione Regalo - IBAN */
-.section-regalo {
-  background-color: #fff;
-}
-
-.section-regalo h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.section-regalo p {
-  margin-bottom: 1rem;
-}
-
-.section-regalo .iban {
-  font-size: 1.2rem;
-  color: #444;
-}
-
-.section-regalo .icon-heart {
-  font-size: 2rem;
-  color: red;
-}
-
-/* Sezione Galleria Fotografica */
-.section-galleria {
-  background-color: #faf5f5;
-}
-
-.section-galleria h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* Impilamento verticale e larghezza massima per le immagini 
-   (eccetto l'immagine hero) */
-.info-images,
-.viaggio-images,
-.gallery-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  max-width: 800px;
-  margin: 2rem auto;
-}
-
-.info-images img,
-.viaggio-images img,
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-/* Footer */
-.main-footer {
-  background-color: #fff;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
-/* Effetti di animazione (fade-in) */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.appear {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  /* Se vuoi che la navbar resti sempre in fila, 
-     lascia commentato il vecchio codice:
-  
-  .main-nav ul {
+.section {
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
-    padding: 1rem;
-  } */
+    justify-content: center;
+}
 
-  /* Le immagini sono già impilate di default, 
-     qui puoi ridurre ulteriormente la larghezza se desideri */
-  .info-images img,
-  .viaggio-images img,
-  .gallery-grid img {
-    max-width: 300px;
-  }
+.image-grid {
+    display: grid;
+    grid-gap: 1rem;
+    margin: 2rem 0;
+}
+
+.info-section .image-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.iban-box {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.iban {
+    font-family: monospace;
+    font-size: 1.2rem;
+    padding: 1rem;
+    background-color: white;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.fa-heart {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.map {
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .info-section .image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
